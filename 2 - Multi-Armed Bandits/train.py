@@ -5,6 +5,11 @@ epsilons = [0, 0.01, 0.1]
 for eps in epsilons:
     eps_greedy.train(eps)
 
-# train ε-greedy with constant step size and optimistic initial values
+# train greedy agent with optimistic initial value estimates and compare it to an ε-greedy agent
 optimistic_init.train(eps=0, init_value=5)
 optimistic_init.train(0.1, 0)
+
+# train UCB agents with different c values
+cs = [1, 2, 5]
+for c in cs:
+    ucb.train(c)
