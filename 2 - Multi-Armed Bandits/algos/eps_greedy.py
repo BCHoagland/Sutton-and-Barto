@@ -45,4 +45,4 @@ def train(eps):
 
         # plot the mean progress of all agents
         new = True if step == 0 else False
-        plot(step, successes.mean(), 'Percent Optimal Action - ε-Greedy', str(eps), new)
+        plot(step, successes.mean(), '% Optimal Action - ε-Greedy', 'ε: ' + str(eps), new)

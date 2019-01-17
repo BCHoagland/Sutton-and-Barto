@@ -2,7 +2,7 @@
 The various algorithms in this section train agents on the k-armed bandits problem.
 
 - [x] ε-Greedy
-- [ ] ε-Greedy with Optimistic Initialization
+- [x] ε-Greedy with Optimistic Initialization
 - [ ] Upper-Confidence-Bound (UCB) Action Selection
 - [ ] Gradient Bandit
 
@@ -12,3 +12,6 @@ Take a random action with probability ε, otherwise take the action with the hig
 Estimated values are updated with an incremental running average.
 
 It can be seen that lower ε corresponds with slower but steadier convergence to an optimal solution. In the case of ε = 0, the agent never explores and therefore can only learn optimal strategies by random chance.
+
+## ε-Greedy with Optimistic Initialization
+The initial value estimations of each action start at some value larger than what their real value probably is. As the agent tries greedy actions and is disappointed, those actions' values drop while the other actions' value estimates stay high. This kickstarts exploration at the beginning of training, even if ε = 0
