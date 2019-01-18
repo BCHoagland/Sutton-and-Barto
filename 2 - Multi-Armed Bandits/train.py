@@ -13,3 +13,8 @@ optimistic_init.train(0.1, 0)
 cs = [1, 2, 5]
 for c in cs:
     ucb.train(c)
+
+# train gradient bandit agent with different alpha values
+alphas = [0.01, 0.1, 0.4]
+for alpha in alphas:
+    gradient_bandit.train(alpha)

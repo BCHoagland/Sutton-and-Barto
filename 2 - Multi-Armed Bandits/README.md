@@ -24,3 +24,9 @@ This implementation also uses a constant step size ⍺ instead of a 1/N step siz
 UCB includes an exploration term in the value estimate, ensuring non-random exploration (unlike ε-greedy) without optimistic initialization.
 
 This implementation uses a constant step size, and adds 1 to both terms under the radical in the maximization function as an easy way of avoiding log(0) or division by 0.
+
+
+## Gradient Bandit
+Store preference values for each action relative to the other actions. The probability of choosing an action is based on the value of its preference put through the softmax function along with the other actions' preferences.
+
+The preferences are updated based on the gradient of the expected reward.

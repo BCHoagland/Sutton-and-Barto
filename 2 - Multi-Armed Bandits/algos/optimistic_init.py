@@ -17,7 +17,7 @@ def train(eps, init_value):
     # keep track of each agent's optimal actions (1) and non-optimal actions (0)
     successes = np.array([0] * num_agents)
 
-    # initialize action-value estimates and number of times each action has been taken to 0
+    # initialize action-value estimates and number of times each action has been taken to some initial value
     Q = [[init_value] * k for _ in range(num_agents)]
 
     for step in range(1000):
