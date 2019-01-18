@@ -4,7 +4,7 @@ The various algorithms in this section train agents on the k-armed bandits probl
 - [x] ε-Greedy
 - [x] ε-Greedy with Optimistic Initialization
 - [x] Upper-Confidence-Bound (UCB) Action Selection
-- [ ] Gradient Bandit
+- [x] Gradient Bandit
 
 
 ## ε-Greedy
