@@ -13,8 +13,7 @@ def contour(data, title):
     )
 
 def plot_V(V):
-    contour(V, 'Values')
-
+    contour(V, 'Values - Car Rental')
 
 def plot_P(P):
-    contour(P, 'Policy')
+    contour(P, 'Policy - Car Rental')
