@@ -6,7 +6,7 @@ from policy import *
 from visualize import *
 
 # hyperparameters
-eps = 0.1
+eps = 0.3
 gamma = 0.9
 
 track_num = 2
@@ -37,7 +37,9 @@ def run_episode(policy, display=False):
         if display:
             a = policy.get_action(s)                                        # if we're displaying, we're using the target policy
         else:
-            a = policy.get_action(s, Q)                                     # if we're not displaying, we're using the behavior policy
+            a = policy.get_action(s, Q)
+            if random.random() < 0.1:
+                a = np.array([0, 0])                                 # if we're not displaying, we're using the behavior policy
         s, r, done = env.step(a)
 
         A.append(tuple(a))
