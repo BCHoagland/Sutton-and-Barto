@@ -31,6 +31,16 @@ def map(track, pos):
         )
     )
 
+def frequency_map(visited):
+    viz.heatmap(
+        X=visited.transpose(),
+        win='Visited',
+        opts=dict(
+            title='Number of Times Visited',
+            colormap='Hot'
+        )
+    )
+
 def plot_ep_len(ep_lens):
     viz.line(
         X=np.arange(len(ep_lens)),
