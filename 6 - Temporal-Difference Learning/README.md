@@ -6,7 +6,7 @@ Two separate experiments are conducted using TD(0) on a small linear Markov Rewa
 <img src="./random_walk/img/walk-diagram.png">
 All episodes begin in state C
 
-1. Convergence of state value estimates to the true state values over 100 episodes
+1. Convergence of state value estimates to the true state values over 100 episodes, ⍺ = 0.1 
 <img src="./random_walk/img/state-values.svg">
 
 2. RMS error over 100 episodes using different ⍺ values, each averaged over 100 trials
