@@ -6,7 +6,7 @@ Two separate experiments are conducted using TD(0) on a small linear Markov Rewa
 <img src="./random_walk/img/walk-diagram.png">
 All episodes begin in state C
 
-1. Convergence of state value estimates to the true state values over 100 episodes, ⍺ = 0.1 
+1. Convergence of state value estimates to the true state values over 100 episodes, ⍺ = 0.1
 <img src="./random_walk/img/state-values.svg">
 
 2. RMS error over 100 episodes using different ⍺ values, each averaged over 100 trials
@@ -24,10 +24,10 @@ Map of the windy gridworld. The agent (yellow) must reach the goal (green). Purp
 SARSA was used to train three agents that each had access to a different action space:
 
 1. Four actions: up, down, left, right
-<img src="./windy_gridworld/four/map.svg">
+<img src="./windy_gridworld/img/four.svg">
 
 2. Eight actions: all straight and diagonal directions
-<img src="./windy_gridworld/eight/map.svg">
+<img src="./windy_gridworld/img/eight.svg">
 
 3. Nine actions: all straight and diagonal directions, plus an action to stand still (wind still has effect)
-<img src="./windy_gridworld/nine/map.svg">
+<img src="./windy_gridworld/img/nine.svg">
