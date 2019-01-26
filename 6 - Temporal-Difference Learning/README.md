@@ -31,3 +31,8 @@ SARSA was used to train three agents that each had access to a different action 
 
 3. Nine actions: all straight and diagonal directions, plus an action to stand still (wind still has effect)
 <img src="./windy_gridworld/img/nine.svg">
+
+
+# Stochastic Variant
+The environment was also tested with stochastic wind. Each column had an equal chance of either having wind with +1, -1 or the same strength as the map of the gridworld dictates. Below is the training graph for a four-action agent in this environment.
+<img src="./windy_gridworld/img/four-stochastic.svg">

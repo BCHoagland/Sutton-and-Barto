@@ -6,7 +6,7 @@ from env import Env
 from visualize import *
 
 # hyperparameters
-max_episodes = 1000
+max_episodes = 2000
 eps = 0.1
 alpha = 0.5
 gamma = 1
@@ -16,11 +16,12 @@ four_a = [[0, 1], [0, -1], [1, 0], [-1, 0]]
 eight_a = [[0, 1], [0, -1], [1, 0], [-1, 0], [-1, -1], [-1, 1], [1, 1], [1, -1]]
 nine_a = [[0, 1], [0, -1], [1, 0], [-1, 0], [-1, -1], [-1, 1], [1, 1], [1, -1], [0, 0]]
 
-# number of actions used during training
+# number of actions used during training and whether or not wind is stochastic
 actions = four_a
+stochastic_wind = False
 
 # create windy gridworld environment
-env = Env(actions)
+env = Env(actions, stochastic_wind)
 
 # initialize all Q values to 0
 Q = np.zeros((env.width, env.height, len(actions)))
