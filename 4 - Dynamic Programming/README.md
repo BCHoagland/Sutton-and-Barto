@@ -12,7 +12,7 @@ Policy iteration is used to create a policy to transfer cars from location 1 to 
 p_h = 0.4
 A gambler is attempting to win $100. He wagers money and then flips a coin. If the coin lands on heads (with probability 0.4), the gambler gets double the value of his wager. If the coin lands on tails, he loses his wager. He can wager up to how much money he currently owns (but not enough that winning the wager would give him more than $100).
 
-Value iteration is used to create a policy that wagers money based on the amount of money the gambler currently owns. Due to many equivalent optimal policies, the displayed optimal policy is just one of money (vastly different optimal policies can be generated from slight nuances in different implementations, although each optimal policy shares a somewhat triangular form when graphed).
+Value iteration is used to create a policy that wagers money based on the amount of money the gambler currently owns. Due to many equivalent optimal policies, the displayed optimal policy is just one of many (vastly different optimal policies can be generated from slight nuances in different implementations, although each optimal policy shares a somewhat triangular form when graphed).
 
 <img src="./gamblers_problem/img/value-gambler.svg">
 <img src="./gamblers_problem/img/policy-gambler.svg">
