@@ -52,3 +52,11 @@ This difference in performance can be attributed to the fact that Q-Learning use
 The Expected SARA agent exhibits less variance than the SARSA agent due to the fact that its update rule includes the expectation over next state-action pairs instead of just sampling the next action from the policy.
 
 <img src="./cliff_walking/img/returns.svg">
+
+
+## Double Q-Learning
+Agents were tasked with navigating a simple MDP with two non-terminal states. State A could transition to either B or a terminal state, always giving a reward of 0. State B would only transition to a terminal state whose reward was sampled from N(-0.1, 1).
+<img src="./double_learning/img/map.png">
+
+The Q-Learning agent was outperformed by the Double Q-Learning agent, but only by slightly. This experiment only used two possible actions for state B, whereas the book used many, which could account for normal Q-Learning not being far inferior to Double Q-Learning in this scenario.
+<img src="./double_learning/img/left.svg">
