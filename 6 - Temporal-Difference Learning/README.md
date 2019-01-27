@@ -46,4 +46,4 @@ A SARSA agent tends to complete training episodes with higher returns due to the
 
 This difference in performance can be attributed to the fact that Q-Learning uses the maximum Q-value of the next state across all actions when updating its stored state-action values, whereas SARSA uses the current policy to choose the next Q-value. Since the policy is ε-greedy, a SARSA agent traveling too close to the cliff will sometimes randomly choose the cliff as the next state and thus skew its estimates of the optimal Q-values.
 
-<img src="./cliff_walking/img/map.png">
+<img src="./cliff_walking/img/returns.svg">
