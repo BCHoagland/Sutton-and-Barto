@@ -18,6 +18,7 @@ An agent attempts to move from one position in a grid to another, but some colum
 
 # Gridworld Map
 Map of the windy gridworld. The agent (yellow) must reach the goal (green). Purple areas of the grid have no wind, blue areas move the agent an additional 1 tile upward every move, and the teal areas move the agent an additional 2 tiles upward.
+
 <img src="./windy_gridworld/img/map.svg">
 
 # Agents
@@ -35,11 +36,13 @@ SARSA was used to train three agents that each had access to a different action 
 
 # Stochastic Variant
 The environment was also tested with stochastic wind. Each column had an equal chance of either having wind with +1, -1 or the same strength as the map of the gridworld dictates. Below is the training graph for a four-action agent in this environment.
+
 <img src="./windy_gridworld/img/four-stochastic.svg">
 
 
 ## Cliff Walking
 An agent must move from one bottom corner of a grid to the other while avoiding all other tiles on the bottom of the grid, as shown below.
+
 <img src="./cliff_walking/img/map.png">
 
 The SARSA agent tends to complete training episodes with higher returns due to the fact that it takes a safer path around the cliff. The Q-Learning agent converges to a lower average episodic return during training due to the fact that it takes a more optimal path around the cliff (the ε-greedy policy used during training causes it to randomly walk over the cliff more often than the SARSA agent does).
