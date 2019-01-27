@@ -16,12 +16,12 @@ All episodes begin in state C
 ## Windy Gridworld
 An agent attempts to move from one position in a grid to another, but some columns in the grid have constant amounts of "wind" that pushes the agent upward during every move.
 
-# Gridworld Map
+### Gridworld Map
 Map of the windy gridworld. The agent (yellow) must reach the goal (green). Purple areas of the grid have no wind, blue areas move the agent an additional 1 tile upward every move, and the teal areas move the agent an additional 2 tiles upward.
 
 <img src="./windy_gridworld/img/map.svg">
 
-# Agents
+### Agents
 SARSA was used to train three agents that each had access to a different action space:
 
 1. Four actions: up, down, left, right
@@ -34,7 +34,7 @@ SARSA was used to train three agents that each had access to a different action 
 <img src="./windy_gridworld/img/nine.svg">
 
 
-# Stochastic Variant
+### Stochastic Variant
 The environment was also tested with stochastic wind. Each column had an equal chance of either having wind with +1, -1 or the same strength as the map of the gridworld dictates. Below is the training graph for a four-action agent in this environment.
 
 <img src="./windy_gridworld/img/four-stochastic.svg">
