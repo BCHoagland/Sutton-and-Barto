@@ -42,8 +42,10 @@ The environment was also tested with stochastic wind. Each column had an equal c
 An agent must move from one bottom corner of a grid to the other while avoiding all other tiles on the bottom of the grid, as shown below.
 <img src="./cliff_walking/img/map.png">
 
-A SARSA agent tends to complete training episodes with higher returns due to the fact that it takes a safer path around the cliff. A Q-Learning agent converges to a lower average episodic return during training due to the fact that it takes a more optimal path around the cliff (the ε-greedy policy used during training causes it to randomly walk over the cliff more often than the SARSA agent does).
+The SARSA agent tends to complete training episodes with higher returns due to the fact that it takes a safer path around the cliff. The Q-Learning agent converges to a lower average episodic return during training due to the fact that it takes a more optimal path around the cliff (the ε-greedy policy used during training causes it to randomly walk over the cliff more often than the SARSA agent does).
 
 This difference in performance can be attributed to the fact that Q-Learning uses the maximum Q-value of the next state across all actions when updating its stored state-action values, whereas SARSA uses the current policy to choose the next action. Since the policy is ε-greedy, a SARSA agent traveling too close to the cliff will sometimes randomly walk off the cliff as the result of the chosen action and thus skew its estimates of the optimal Q-values.
+
+The Expected SARA agent exhibits less variance than the SARSA agent due to the fact that its update rule includes the expectation over next state-action pairs instead of just sampling the next action from the policy.
 
 <img src="./cliff_walking/img/returns.svg">

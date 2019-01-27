@@ -33,3 +33,20 @@ class SARSA_Agent(Agent):
         s_a = tuple(s) + tuple([a])
         s2_a2 = tuple(s2) + tuple([a2])
         self.Q[s_a] += alpha * (r + (gamma * self.Q[s2_a2]) - self.Q[s_a])
+
+class Expected_SARSA_Agent(Agent):
+    def __init__(self, env):
+        Agent.__init__(self, env)
+
+    def expected_next_Q(self, s2):
+        expectation = 0
+        for a2 in range(4):
+            s2_a2 = tuple(s2) + tuple([a2])
+            prob = 1 - eps + (eps / 4) if a2 == np.argmax(self.Q[tuple(s2)]) else eps / 4
+            expectation += prob * self.Q[s2_a2]
+        return expectation
+
+    def update_Q(self, s, a, r, s2, a2):
+        s_a = tuple(s) + tuple([a])
+        s2_a2 = tuple(s2) + tuple([a2])
+        self.Q[s_a] += alpha * (r + (gamma * self.expected_next_Q(s2)) - self.Q[s_a])

@@ -5,7 +5,7 @@ viz = Visdom()
 
 all_r = []
 
-legend = ['SARSA', 'Q-Learning']
+legend = ['SARSA', 'Q-Learning', 'Expected SARSA']
 
 def plot(r, new):
     means = np.mean(r, axis=0)

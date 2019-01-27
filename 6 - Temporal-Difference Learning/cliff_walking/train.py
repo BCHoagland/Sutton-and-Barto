@@ -1,5 +1,5 @@
 from env import Env
-from agents import SARSA_Agent, Q_Learning_Agent
+from agents import SARSA_Agent, Q_Learning_Agent, Expected_SARSA_Agent
 from visualize import *
 
 num_trials = 100
@@ -9,6 +9,7 @@ env = Env()
 
 sarsa_agent = SARSA_Agent(env)
 q_learning_agent = Q_Learning_Agent(env)
+expected_sarsa_agent = Expected_SARSA_Agent(env)
 
 def train(agent):
 
@@ -43,3 +44,4 @@ def train(agent):
 
 train(sarsa_agent)
 train(q_learning_agent)
+train(expected_sarsa_agent)
