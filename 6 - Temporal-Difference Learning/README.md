@@ -55,7 +55,8 @@ The Expected SARA agent exhibits less variance than the SARSA agent due to the f
 
 
 ## Double Q-Learning
-Agents were tasked with navigating a simple MDP with two non-terminal states. State A could transition to either B or a terminal state, always giving a reward of 0. State B would only transition to a terminal state whose reward was sampled from N(-0.1, 1).
+Agents were tasked with navigating a simple MDP with two non-terminal states. State A could transition to either B or a terminal state, always giving a reward of 0. State B would only transition to a terminal state whose reward was sampled from N(-0.1, 1). Since the expected reward from state B is -0.1, moving left in state A is never optimal.
+
 <img src="./double_learning/img/map.png">
 
 The Q-Learning agent was outperformed by the Double Q-Learning agent, but only by slightly. This experiment only used two possible actions for state B, whereas the book used many, which could account for normal Q-Learning not being far inferior to Double Q-Learning in this scenario.
