@@ -24,7 +24,6 @@ class Env():
         next_pos = np.clip(self.pos + self.actions[a], 0, [self.width-1, self.height-1])
         if next_pos.tolist() not in self.obstacles:
             self.pos = next_pos
-        self.pos = next_pos
         if self.at_goal():
             return self.pos, 1, True
         return self.pos, 0, False

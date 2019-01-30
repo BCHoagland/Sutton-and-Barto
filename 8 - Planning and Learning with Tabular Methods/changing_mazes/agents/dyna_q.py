@@ -3,8 +3,11 @@ import numpy as np
 
 from args import *
 
-class Agent():
+class DynaQAgent():
     def __init__(self, env):
+        self.name = 'Dyna-Q'
+        self.env = env
+        self.env_name = env.name
         self.env_width = env.width
         self.env_height = env.height
         self.reset()
@@ -14,11 +17,12 @@ class Agent():
         self.model = np.zeros((self.env_width, self.env_height, 4, 2), dtype=object)
         self.old_s = []
         self.old_a = []
+        self.env.reset()
 
     def update_Q(self, s, a, r, s2):
         s_a = tuple(s) + tuple([a])
         s2_max_a = tuple(s2) + tuple([np.argmax(self.Q[tuple(s2)])])
-        self.Q[s_a] += alpha * (r + (gamma * self.Q[s2_max_a]) - self.Q[s_a])
+        self.Q[s_a] += α * (r + (γ * self.Q[s2_max_a]) - self.Q[s_a])
 
     def update_model(self, s, a, r, s2):
         s_a = tuple(s) + tuple([a])
@@ -26,7 +30,7 @@ class Agent():
         self.model[s_a][1] = s2
 
     def get_action(self, s):
-        if random.random() < eps:
+        if random.random() < ε:
             a = random.randint(0, 3)
         else:
             possible_a = self.Q[tuple(s)]
