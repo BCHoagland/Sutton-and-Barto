@@ -14,16 +14,20 @@ The agent used Tabular Dyna-Q (a combination of one-step tabular Q-learning with
 
 Dyna_Q (while planning, states are randomly sampled) and Priority Sweeping (while planning, samples states according to which change estimated values the most) were compared on three mazes: the maze from the original Dyna-Q testing, as well as two mazes whose layouts changed after 1000 and 3000 timesteps, respectively:
 
+### Blocking Maze
 <img src="./priority_sweeping/img/blocking_map.png">
+
+### Shortcut Maze
 <img src="./priority_sweeping/img/shortcut_map.png">
 
-The cumulative reward from training is displayed below:
+### Results
+The cumulative reward from training is displayed below, with the x-axis denoting the number of total timesteps passed during training. The results are averaged over 20 trials:
 
 <img src="./priority_sweeping/img/basic.svg">
 <img src="./priority_sweeping/img/blocking.svg">
 <img src="./priority_sweeping/img/shortcut.svg">
 
-Although Dyna-Q outperformed Priority Sweeping in terms of timestep efficiency, priority sweeping can be seen to significantly outperform Dyna-Q in terms of number of updates per training session.
+Although Dyna-Q outperformed Priority Sweeping in terms of timestep efficiency, priority sweeping can be seen to significantly outperform Dyna-Q in terms of number of updates per training session. Dyna-Q must perform the maximum number of updates, and as such performs at least an order of magnitude more updates per fixed set of timesteps as priority sweeping does on the three training tasks.
 
 |          | Dyna-Q  | Priority Sweeping |
 |----------|---------|-------------------|
