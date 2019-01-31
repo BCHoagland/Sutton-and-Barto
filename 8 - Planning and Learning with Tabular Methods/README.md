@@ -27,10 +27,8 @@ The cumulative reward from training is displayed below, with the x-axis denoting
 <img src="./priority_sweeping/img/blocking.svg">
 <img src="./priority_sweeping/img/shortcut.svg">
 
-Although Dyna-Q outperformed Priority Sweeping in terms of timestep efficiency, priority sweeping can be seen to significantly outperform Dyna-Q in terms of number of updates per training session. Dyna-Q must perform the maximum number of updates, and as such performs at least an order of magnitude more updates per fixed set of timesteps as priority sweeping does on the three training tasks.
+Although Dyna-Q outperformed Priority Sweeping in terms of timestep efficiency, priority sweeping can be seen to significantly outperform Dyna-Q in terms of number of updates per training session. Dyna-Q must perform the maximum number of updates, and as such performs at least an order of magnitude more updates per fixed set of timesteps as priority sweeping does on the three training tasks. The following graphs show the two agents' cumulative reward as a function of parameter updates, with each agent collecting this data over a fixed number of timesteps.
 
-|          | Dyna-Q  | Priority Sweeping |
-|----------|---------|-------------------|
-| Basic    | 1200000 | 18975             |
-| Blocking | 1200000 | 115396            |
-| Shortcut | 2400000 | 34038             |
+<img src="./priority_sweeping/img/basic_param.svg">
+<img src="./priority_sweeping/img/blocking_param.svg">
+<img src="./priority_sweeping/img/shortcut_param.svg">

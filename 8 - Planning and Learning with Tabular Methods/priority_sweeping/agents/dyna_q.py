@@ -53,8 +53,7 @@ class DynaQAgent():
     def train(self, num_timesteps):
         print('Training %s agent on %s...' % (self.name, self.env_name), end='', flush=True)
 
-        updates = 0
-
+        all_u = [0] * num_timesteps
         all_r = [0] * num_timesteps
         env = self.env
 
@@ -63,6 +62,7 @@ class DynaQAgent():
             self.reset()
             env.reset_t()
             total_r = 0
+            updates = 0
 
             # run trial for set number of timesteps
             s = env.reset()
@@ -76,6 +76,7 @@ class DynaQAgent():
                 # record mean cumulative reward for the current timestep
                 total_r += r
                 all_r[step] += (total_r - all_r[step]) / (trial + 1)
+                all_u[step] += (updates - all_u[step]) / (trial + 1)
 
                 # n-step planning
                 self.update_model(s, a, r, s2)
@@ -91,5 +92,5 @@ class DynaQAgent():
             # plot cumulative reward occasionally
             if trial == 0 or trial % vis_iter == vis_iter-1:
                 new = True if trial == 0 else False
-                plot(all_r, self, new)
-        print('DONE\t\ttotal updates: %d' % (updates))
+                plot(all_u, all_r, self, new)
+        print('DONE')
