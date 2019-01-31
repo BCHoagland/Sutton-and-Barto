@@ -3,7 +3,6 @@ from visdom import Visdom
 
 viz = Visdom()
 
-# all_r = []
 r_dict = {}
 legend = []
 envs = []
@@ -22,12 +21,12 @@ def plot(r, agent, new):
     if agent.name not in legend:
         legend.append(agent.name)
 
-    title = 'Cumulative Reward'
+    title = 'Cumulative Reward - ' + agent.env_name
 
     viz.line(
         X=np.arange(1, len(all_r[0])+1),
         Y=np.array(all_r).transpose(),
-        win=title + agent.env_name,
+        win=title,
         opts=dict(
             title=title,
             legend=legend
