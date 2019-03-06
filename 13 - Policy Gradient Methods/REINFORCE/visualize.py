@@ -13,6 +13,8 @@ def plot_r(r):
         Y=np.array(all_r),
         win=title,
         opts=dict(
-            title=title
+            title=title,
+            xlabel='Episode',
+            ylabel='Episode Reward'
         )
     )
