@@ -1,4 +1,4 @@
 # Policy Gradient Methods
 
 ## REINFORCE
-<img src="./REINFORCE/img/reinforce.svg">
+<img src="./REINFORCE/img/base.svg">
