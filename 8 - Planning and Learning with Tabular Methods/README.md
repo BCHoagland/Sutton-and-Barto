@@ -12,7 +12,7 @@ The agent used Tabular Dyna-Q (a combination of one-step tabular Q-learning with
 
 ## Priority Sweeping
 
-Dyna_Q (while planning, states are randomly sampled) and Priority Sweeping (while planning, samples states according to which change estimated values the most) were compared on three mazes: the maze from the original Dyna-Q testing, as well as two mazes whose layouts changed after 1000 and 3000 timesteps, respectively:
+Dyna-Q (while planning, states are randomly sampled) and Priority Sweeping (while planning, samples states according to which change estimated values the most) were compared on three mazes: the maze from the original Dyna-Q testing, as well as two mazes whose layouts changed after 1000 and 3000 timesteps, respectively:
 
 ### Blocking Maze
 <img src="./priority_sweeping/img/blocking_map.png">
