@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import torch.optim as optim
 
-from model import Policy
+from model import Policy, Value
 from storage import *
 from visualize import *
 
@@ -25,7 +25,10 @@ def calc_returns():
 
 def train():
     π = Policy(n_obs, n_acts)
-    opt = optim.SGD(π.parameters(), lr=α)
+    opt_π = optim.SGD(π.parameters(), lr=α)
+
+    v = Value(n_obs)
+    opt_v = optim.SGD(v.parameters(), lr=α)
 
     for ep in range(max_episodes):
 
@@ -46,13 +49,20 @@ def train():
                 store(s, a, r)
                 s = s2
 
-        # calculate discounted returns
+        # calculate discounted returns with baseline
         calc_returns()
+        s, a, r = get_history()
+        b = v(s).squeeze()
+        δ = r - b
+
+        # update value function
+        opt_v.zero_grad()
+        (-torch.dot(δ, b)).backward(retain_graph=True)
+        opt_v.step()
 
         # update policy for each state-action pair in the trajectory
-        s, a, r = get_history()
-        opt.zero_grad()
-        (-torch.dot(π.get_log_p(s, a), r)).backward()
-        opt.step()
+        opt_π.zero_grad()
+        (-torch.dot(π.get_log_p(s, a), δ)).backward()
+        opt_π.step()
 
 train()
