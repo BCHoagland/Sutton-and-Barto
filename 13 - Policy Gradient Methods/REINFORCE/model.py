@@ -22,3 +22,18 @@ class Policy(nn.Module):
     def get_log_p(self, s, a):
         dist = Categorical(logits=self.main(s))
         return dist.log_prob(a)
+
+class Value(nn.Module):
+    def __init__(self, n_obs):
+        super(Value, self).__init__()
+
+        self.main = nn.Sequential(
+            nn.Linear(n_obs, 64),
+            nn.ReLU(),
+            nn.Linear(64, 64),
+            nn.ReLU(),
+            nn.Linear(64, 1)
+        )
+
+    def forward(self, s):
+        return self.main(s)
